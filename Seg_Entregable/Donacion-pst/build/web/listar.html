@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Usuarios - DonAccion</title>
+  <link rel="stylesheet" href="styles/inicio/inicio.css">
+  <link rel="stylesheet" href="styles/listar/listar.css">
+</head>
+<body>
+  <header>
+    <h1>Lista de Usuarios</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="registrar.html">Registrar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="tabla-container">
+      <h2>Usuarios registrados</h2>
+      <table id="tablaUsuarios">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Rol</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyUsuarios">
+          <!-- Aquí se llenan los datos dinámicamente -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DonAccion - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    async function cargarUsuarios() {
+      try {
+        const response = await fetch("http://localhost:8080/Donacion-pst/usuarios");  
+        const usuarios = await response.json();
+
+        const tbody = document.getElementById("tbodyUsuarios");
+        tbody.innerHTML = ""; // Limpiar antes de insertar
+
+        usuarios.forEach(u => {
+          const fila = `
+            <tr>
+              <td>${u.nombre}</td>
+              <td>${u.correo}</td>
+              <td>${u.telefono}</td>
+              <td>${u.rol}</td>
+            </tr>
+          `;
+          tbody.innerHTML += fila;
+        });
+      } catch (error) {
+        console.error("Error cargando usuarios:", error);
+      }
+    }
+
+    // Ejecutar al cargar la página
+    window.onload = cargarUsuarios;
+  </script>
+</body>
+</html>

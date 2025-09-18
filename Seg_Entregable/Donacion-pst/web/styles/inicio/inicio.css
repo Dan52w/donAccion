@@ -1,0 +1,123 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9fafb;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #004aad;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Secciones */
+main {
+    padding: 40px 20px;
+}
+
+.info {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.registro {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Botón */
+.btn {
+    background: #004aad;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0066cc;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/* Formulario */
+.formulario {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.formulario h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #004aad;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    border-color: #004aad;
+    outline: none;
+}
+
+button.btn {
+    margin-top: 15px;
+}
